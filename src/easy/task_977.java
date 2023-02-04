@@ -16,23 +16,19 @@ public class task_977 {
 
     public static int[] sortedSquares(int[] nums) {
         int[] ans = new int[nums.length];
-        List<Integer> kostyl = new ArrayList<>();
         int start = 0;
         int end = nums.length - 1;
+        int idx = nums.length - 1;
         while(start <= end) {
             if (Math.abs(nums[start]) > Math.abs(nums[end])) {
-                kostyl.add(nums[start] * nums[start]);
+                ans[idx] = nums[start] * nums[start];
+                idx--;
                 start++;
             } else {
-                kostyl.add(nums[end] * nums[end]);
+                ans[idx] = nums[end] * nums[end];
+                idx--;
                 end--;
             }
-        }
-
-        Collections.reverse(kostyl);
-
-        for (int i = 0; i < kostyl.size(); i++) {
-            ans[i] = kostyl.get(i);
         }
 
         return ans;
