@@ -1,6 +1,7 @@
 package easy;
 
 public class task_344 {
+
     public static void main(String[] args) {
         char[] s = {'H','a','n','n','a', 'h'};
         reverseString(s);
@@ -16,6 +17,5 @@ public class task_344 {
             start++;
             end--;
         }
-
     }
 }
