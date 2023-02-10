@@ -7,6 +7,32 @@ public class task_557 {
     }
 
     public static String reverseWords(String s) {
+        char[] sArr = s.toCharArray();
+        int i = 0;
+        for (int j = 0; j < sArr.length; j++) {
+            if (sArr[j] == ' ') {
+                reverseString(sArr, i, j - 1);
+                i = j + 1;
+            }
+        }
+        reverseString(sArr, i, sArr.length - 1);
+
+        return new String(sArr);
+    }
+
+
+    public static void reverseString(char[] b, int start, int end) {
+        while (start < end) {
+            char tmp = b[start];
+            b[start] = b[end];
+            b[end] = tmp;
+            start++;
+            end--;
+        }
+    }
+
+
+/*    public static String reverseWords(String s) {
         String[] strArr = s.split(" ");
 
         StringBuilder sb = new StringBuilder();
@@ -39,5 +65,5 @@ public class task_557 {
         }
 
         return new String(b);
-    }
+    }*/
 }
