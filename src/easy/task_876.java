@@ -2,6 +2,18 @@ package easy;
 
 public class task_876 {
     public ListNode middleNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    /*public ListNode middleNode(ListNode head) {
         int lenCounter = 0;
         ListNode cur = head;
         while(cur.next != null) {
@@ -15,7 +27,7 @@ public class task_876 {
         }
 
         return res;
-    }
+    }*/
 }
 
 class ListNode {
