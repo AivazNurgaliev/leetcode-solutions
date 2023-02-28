@@ -1,6 +1,5 @@
 package medium;
 
-
 import util.ListNode;
 
 public class task_19 {
