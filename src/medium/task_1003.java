@@ -9,6 +9,7 @@ public class task_1003 {
         System.out.println(isValid(s));
     }
 
+    //bad
     public static boolean isValid1(String s) {
         if (s.length() < 3) {
             return false;
@@ -40,6 +41,7 @@ public class task_1003 {
         }
         return true;
     }
+
 
     public static boolean isValid(String s) {
         if (s.length() < 3) {
