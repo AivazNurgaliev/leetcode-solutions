@@ -6,7 +6,7 @@ public class task_1003 {
 
     public static void main(String[] args) {
         String s = "abcabcababcc";
-        System.out.println(isValid(s));
+        System.out.println(isValid3(s));
     }
 
     //bad
@@ -43,6 +43,23 @@ public class task_1003 {
     }
 
 
+    public static boolean isValid3(String s) {
+        if (s.length() < 3) {
+            return false;
+        }
+
+        char[] chars = s.toCharArray();
+
+        int i = 0;
+        for (int j = 0; j < chars.length; j++) {
+            chars[i++] = chars[j];
+            if (i >= 3 && chars[i - 3] == 'a' && chars[i - 2] == 'b' && chars[i - 1] == 'c') {
+                i -= 3;
+            }
+        }
+
+        return i == 0;
+    }
     public static boolean isValid(String s) {
         if (s.length() < 3) {
             return false;
